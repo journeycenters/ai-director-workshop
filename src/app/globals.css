@@ -1,71 +1,139 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0A0A0A;
-  --foreground: #F5F5F0;
+  --bg-deep: #020203;
+  --bg-base: #050506;
+  --bg-elevated: #0a0a0c;
+  --bg-card: #0e0e12;
+  --fg: #ededef;
+  --fg-muted: #8a8a8e;
+  --fg-dim: #4a4a4e;
+  --gold: #d4a843;
+  --gold-light: #f0d78c;
+  --gold-dark: #b8860b;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-gold: #D4A843;
-  --color-gold-light: #E8D48B;
-  --color-gold-dim: rgba(212, 168, 67, 0.12);
-  --color-surface: #111111;
-  --color-card: #161616;
-  --color-card-hover: #1C1C1C;
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-border-gold: rgba(212, 168, 67, 0.3);
-  --color-muted: #737373;
+  --color-deep: var(--bg-deep);
+  --color-base: var(--bg-base);
+  --color-elevated: var(--bg-elevated);
+  --color-card: var(--bg-card);
+  --color-fg: var(--fg);
+  --color-muted: var(--fg-muted);
+  --color-dim: var(--fg-dim);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
   --font-sans: var(--font-inter);
-  --font-display: var(--font-space-grotesk);
+  --font-display: var(--font-playfair);
+  --font-mono: var(--font-jetbrains);
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg-deep);
+  color: var(--fg);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 ::selection {
   background: rgba(212, 168, 67, 0.3);
-  color: #F5F5F0;
+  color: #ededef;
 }
 
-/* Utility classes for the design system */
-.text-balance {
-  text-wrap: balance;
+/* ============ GRADIENT TEXT ============ */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #d4a843 0%, #f0d78c 40%, #d4a843 60%, #b8860b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
+/* ============ GLASS EFFECTS ============ */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-gold {
+  background: rgba(212, 168, 67, 0.04);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(212, 168, 67, 0.15);
+}
+
+/* ============ GLOW EFFECTS ============ */
 .gold-glow {
-  box-shadow: 0 0 40px rgba(212, 168, 67, 0.15), 0 0 80px rgba(212, 168, 67, 0.05);
+  box-shadow: 0 0 60px rgba(212, 168, 67, 0.1), 0 0 120px rgba(212, 168, 67, 0.04);
+}
+
+.gold-glow-strong {
+  box-shadow: 0 0 40px rgba(212, 168, 67, 0.2), 0 0 80px rgba(212, 168, 67, 0.1), 0 0 160px rgba(212, 168, 67, 0.05);
 }
 
 .gold-glow-text {
-  text-shadow: 0 0 40px rgba(212, 168, 67, 0.3);
+  text-shadow: 0 0 60px rgba(212, 168, 67, 0.3), 0 0 120px rgba(212, 168, 67, 0.1);
 }
 
-.line-reveal {
-  clip-path: inset(0 100% 0 0);
+/* ============ ANIMATED BLOBS ============ */
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -50px) scale(1.1); }
+  50% { transform: translate(-20px, 20px) scale(0.95); }
+  75% { transform: translate(40px, 15px) scale(1.05); }
 }
 
-.line-revealed {
-  clip-path: inset(0 0% 0 0);
-  transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+@keyframes blob-reverse {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-40px, 30px) scale(0.95); }
+  50% { transform: translate(30px, -20px) scale(1.08); }
+  75% { transform: translate(-15px, -40px) scale(1.02); }
 }
 
-/* Noise texture overlay */
-.noise::before {
+.animate-blob { animation: blob 20s ease-in-out infinite; }
+.animate-blob-reverse { animation: blob-reverse 25s ease-in-out infinite; }
+.animation-delay-2 { animation-delay: 2s; }
+.animation-delay-4 { animation-delay: 4s; }
+.animation-delay-6 { animation-delay: 6s; }
+
+/* ============ NOISE TEXTURE ============ */
+.noise::after {
   content: '';
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  z-index: 9999;
   pointer-events: none;
-  z-index: 1;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============ MAGNETIC BUTTON ============ */
+.magnetic-btn {
+  cursor: pointer;
+  will-change: transform;
+}
+
+/* ============ CARD 3D TILT ============ */
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ============ REDUCED MOTION ============ */
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob,
+  .animate-blob-reverse {
+    animation: none;
+  }
+  .gold-glow-text {
+    text-shadow: none;
+  }
 }

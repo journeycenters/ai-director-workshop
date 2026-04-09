@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,16 +8,22 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const playfair = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-space-grotesk",
+  variable: "--font-playfair",
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-jetbrains",
 });
 
 export const metadata: Metadata = {
   title: "AI Director Workshop — Stop Prompting. Start Directing.",
   description:
-    "A 4-hour intensive where you'll build a real AI system that runs your business. Learn to think like a director, not a technician. Limited seats.",
+    "A 4-hour intensive where you'll build a real AI system that runs your business. Learn to think like a director, not a technician. Limited to 25 seats.",
   openGraph: {
     title: "AI Director Workshop — Stop Prompting. Start Directing.",
     description:
@@ -34,9 +40,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
+      className={`${inter.variable} ${playfair.variable} ${jetbrains.variable} antialiased`}
     >
-      <body>{children}</body>
+      <body className="noise">{children}</body>
     </html>
   );
 }

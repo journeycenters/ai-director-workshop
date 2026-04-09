@@ -1,3 +1,6 @@
+import SmoothScroll from "@/components/SmoothScroll";
+import Preloader from "@/components/Preloader";
+import ScrollProgress from "@/components/ScrollProgress";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Roles from "@/components/Roles";
@@ -11,6 +14,9 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
+      <SmoothScroll />
+      <Preloader />
+      <ScrollProgress />
       <Navbar />
       <main>
         <Hero />

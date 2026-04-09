@@ -2,31 +2,31 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border py-12">
+    <footer className="border-t border-white/[0.04] py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
           <div className="flex items-center gap-3">
             <Image
               src="/logo.png"
               alt="Syntac"
-              width={24}
-              height={24}
-              className="opacity-60"
+              width={20}
+              height={20}
+              className="opacity-40"
             />
-            <span className="text-sm text-muted">
-              &copy; {new Date().getFullYear()} Syntac. All rights reserved.
+            <span className="font-mono text-[11px] text-dim tracking-[0.1em]">
+              &copy; {new Date().getFullYear()} Syntac
             </span>
           </div>
           <div className="flex items-center gap-6">
             <a
               href="#"
-              className="text-sm text-muted transition-colors hover:text-gold"
+              className="font-mono text-[11px] text-dim tracking-[0.1em] cursor-pointer transition-colors duration-300 hover:text-gold/70"
             >
               Contact
             </a>
             <a
               href="#"
-              className="text-sm text-muted transition-colors hover:text-gold"
+              className="font-mono text-[11px] text-dim tracking-[0.1em] cursor-pointer transition-colors duration-300 hover:text-gold/70"
             >
               Privacy
             </a>
