@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -22,12 +21,13 @@ export default function Navbar() {
     >
       <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-4 lg:px-8">
         <a href="#" className="flex items-center gap-3 group">
-          <Image
-            src="/logo.png"
-            alt="AI Director Workshop"
-            width={32}
-            height={32}
-            className="opacity-70 transition-opacity duration-300 group-hover:opacity-100"
+          <video
+            src="/logo-video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-8 h-8 rounded-md object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-100"
           />
           <span className="font-mono text-[11px] font-medium tracking-[0.25em] uppercase text-fg/50 transition-colors duration-300 group-hover:text-gold/70">
             AI Director Workshop

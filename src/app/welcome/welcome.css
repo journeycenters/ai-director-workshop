@@ -1,0 +1,77 @@
+/* ============ WELCOME PAGE ============ */
+
+.welcome-page {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  background: #080c09;
+  color: rgb(245, 240, 232);
+}
+
+.welcome-page .font-display {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+.welcome-page .font-mono {
+  font-family: var(--font-jetbrains), monospace;
+}
+
+/* Cream color utility */
+.welcome-page .text-cream\/95 { color: rgba(245, 240, 232, 0.95); }
+.welcome-page .text-cream\/90 { color: rgba(245, 240, 232, 0.9); }
+.welcome-page .text-cream\/70 { color: rgba(245, 240, 232, 0.7); }
+.welcome-page .text-cream\/55 { color: rgba(245, 240, 232, 0.55); }
+.welcome-page .text-cream\/40 { color: rgba(245, 240, 232, 0.4); }
+.welcome-page .text-cream\/15 { color: rgba(245, 240, 232, 0.15); }
+.welcome-page .text-cream\/8 { color: rgba(245, 240, 232, 0.08); }
+.welcome-page .bg-cream\/8 { background-color: rgba(245, 240, 232, 0.08); }
+.welcome-page .bg-cream\/15 { background-color: rgba(245, 240, 232, 0.15); }
+
+/* Warm gradient text — sage to amber to cream */
+.text-gradient-warm {
+  background: linear-gradient(
+    135deg,
+    rgb(180, 200, 150) 0%,
+    rgb(220, 175, 80) 35%,
+    rgb(245, 220, 150) 65%,
+    rgb(200, 160, 70) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 30px rgba(220, 175, 80, 0.3));
+}
+
+/* ============ CHAR REVEAL ============ */
+.word-wrap {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.char-wrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.char {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* ============ SCROLL CUE ============ */
+@keyframes scroll-cue {
+  0% { transform: translateY(-100%); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(300%); opacity: 0; }
+}
+
+.scroll-cue-line {
+  animation: scroll-cue 2.5s ease-in-out infinite;
+}
+
+/* ============ REDUCED MOTION ============ */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue-line {
+    animation: none;
+  }
+}

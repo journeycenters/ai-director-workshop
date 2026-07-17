@@ -122,7 +122,7 @@ function MagneticButton({
 
 const included = [
   "4-hour live intensive (in-person or hybrid)",
-  "Your personal Soul Document — built in-session",
+  "Your personal Soul Document, built in-session",
   "A working AI workflow you'll use starting tomorrow",
   "The Director's Briefing Framework (one-pager)",
   "30-day refinement playbook",
@@ -203,7 +203,7 @@ export default function Pricing() {
               <span className="text-dim">/person</span>
             </div>
             <p className="mt-3 text-sm text-dim">
-              Limited availability — locks in before April 8
+              Limited availability: locks in before April 8
             </p>
 
             <div className="mt-8 h-px bg-white/[0.06]" />
@@ -227,7 +227,7 @@ export default function Pricing() {
 
           {/* Standard / Featured */}
           <TiltCard
-            className="price-card rounded-2xl glass-gold gold-glow-strong p-10 overflow-hidden"
+            className="price-card rounded-2xl glass-gold gold-glow-strong glow-border glow-border-intense p-10 overflow-hidden"
             goldGlow
           >
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20">
@@ -246,7 +246,7 @@ export default function Pricing() {
               <span className="text-dim">/person</span>
             </div>
             <p className="mt-3 text-sm text-dim">
-              Full price — still a fraction of the revenue you&apos;ll recover
+              Full price, still a fraction of the revenue you&apos;ll recover
             </p>
 
             <div className="mt-8 h-px bg-gold/10" />

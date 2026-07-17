@@ -12,19 +12,19 @@ const audiences = [
     label: "01",
     title: "Small Business Owners",
     description:
-      "Drowning in operational tasks. You sense AI can help but don't know where to start — or you've tried and it felt like a novelty.",
+      "Drowning in operational tasks. You sense AI can help but don't know where to start, or you've tried and it felt like a novelty.",
   },
   {
     label: "02",
     title: "Therapists & Practitioners",
     description:
-      "Want to reclaim clinical hours from admin burden — notes, scheduling, intake, content. Your expertise is too valuable for paperwork.",
+      "Want to reclaim clinical hours from admin burden: notes, scheduling, intake, content. Your expertise is too valuable for paperwork.",
   },
   {
     label: "03",
     title: "Revenue Seekers",
     description:
-      "Looking for new revenue streams — side hustles, consulting pivots, productized services. The person who can direct AI across 5 domains beats the expert in 1.",
+      "Looking for new revenue streams: side hustles, consulting pivots, productized services. The person who can direct AI across 5 domains beats the expert in 1.",
   },
   {
     label: "04",

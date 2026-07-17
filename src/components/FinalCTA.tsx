@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import AuroraWaves from "./AuroraWaves";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -83,13 +84,11 @@ export default function FinalCTA() {
       ref={sectionRef}
       className="relative py-32 lg:py-44 bg-base overflow-hidden"
     >
-      {/* Ambient gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_110%,rgba(212,168,67,0.05),transparent)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_30%_at_50%_50%,rgba(212,168,67,0.02),transparent)]" />
+      {/* WebGL Aurora Waves Background */}
+      <AuroraWaves speed={0.7} glow={14.0} />
 
-      {/* Animated blobs */}
-      <div className="absolute bottom-0 left-[20%] w-[400px] h-[400px] rounded-full bg-gold/[0.04] blur-[120px] animate-blob animation-delay-2" />
-      <div className="absolute top-[20%] right-[15%] w-[300px] h-[300px] rounded-full bg-purple-500/[0.03] blur-[100px] animate-blob-reverse" />
+      {/* Overlay to darken center for text readability */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(2,2,3,0.5),transparent)] z-[1]" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center lg:px-8">
         {/* Gold divider */}

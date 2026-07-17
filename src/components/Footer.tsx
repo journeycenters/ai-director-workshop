@@ -1,4 +1,4 @@
-import Image from "next/image";
+import DNAHelix from "./DNAHelix";
 
 export default function Footer() {
   return (
@@ -6,13 +6,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
           <div className="flex items-center gap-3">
-            <Image
-              src="/logo.png"
-              alt="Syntac"
-              width={20}
-              height={20}
-              className="opacity-40"
-            />
+            <DNAHelix size={22} />
             <span className="font-mono text-[11px] text-dim tracking-[0.1em]">
               &copy; {new Date().getFullYear()} Syntac
             </span>

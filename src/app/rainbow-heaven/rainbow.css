@@ -1,0 +1,205 @@
+/* ============ RAINBOW HEAVEN ============ */
+
+.rainbow-page {
+  font-family: var(--font-fredoka), system-ui, sans-serif;
+  cursor: crosshair;
+}
+
+.rainbow-page * {
+  cursor: inherit;
+}
+
+.rainbow-page button,
+.rainbow-page a {
+  cursor: pointer;
+}
+
+/* ============ ANIMATED RAINBOW TEXT ============ */
+.rainbow-text-animated {
+  background: linear-gradient(
+    90deg,
+    #ff1493,
+    #ff00ff,
+    #9d00ff,
+    #00ffff,
+    #00ff88,
+    #ffff00,
+    #ff8800,
+    #ff0066,
+    #ff1493
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: rainbow-flow 4s linear infinite;
+  filter: drop-shadow(0 0 30px rgba(255, 0, 255, 0.5))
+    drop-shadow(0 0 60px rgba(0, 255, 255, 0.3));
+}
+
+.rainbow-text-static {
+  background: linear-gradient(
+    135deg,
+    #ff1493 0%,
+    #ff00ff 25%,
+    #9d00ff 50%,
+    #00ffff 75%,
+    #ff1493 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(255, 0, 255, 0.4));
+}
+
+@keyframes rainbow-flow {
+  to {
+    background-position: -300% center;
+  }
+}
+
+/* ============ BLOB ANIMATIONS ============ */
+@keyframes blob-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(80px, -100px) scale(1.15); }
+  66% { transform: translate(-60px, 60px) scale(0.9); }
+}
+@keyframes blob-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-100px, 80px) scale(1.1); }
+  66% { transform: translate(70px, -50px) scale(0.95); }
+}
+@keyframes blob-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(60px, 100px) scale(0.85); }
+  66% { transform: translate(-80px, -70px) scale(1.2); }
+}
+@keyframes blob-4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(120px, 60px) scale(1.1); }
+  66% { transform: translate(-50px, 90px) scale(0.9); }
+}
+@keyframes blob-5 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-90px, -80px) scale(1.05); }
+  66% { transform: translate(50px, 50px) scale(1.1); }
+}
+
+.animate-blob-1 { animation: blob-1 18s ease-in-out infinite; }
+.animate-blob-2 { animation: blob-2 22s ease-in-out infinite; }
+.animate-blob-3 { animation: blob-3 25s ease-in-out infinite; }
+.animate-blob-4 { animation: blob-4 20s ease-in-out infinite; }
+.animate-blob-5 { animation: blob-5 28s ease-in-out infinite; }
+
+/* ============ RAINBOW BUTTONS ============ */
+.rainbow-btn-lg,
+.rainbow-btn-sm {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    #ff1493,
+    #ff00ff,
+    #9d00ff,
+    #00ffff,
+    #ff1493
+  );
+  background-size: 300% auto;
+  animation: rainbow-flow 3s linear infinite;
+  box-shadow: 0 10px 50px -10px rgba(255, 0, 255, 0.6),
+    0 0 30px rgba(0, 255, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rainbow-btn-lg:hover,
+.rainbow-btn-sm:hover {
+  transform: scale(1.1) rotate(-2deg);
+  box-shadow: 0 20px 80px -10px rgba(255, 0, 255, 0.8),
+    0 0 60px rgba(0, 255, 255, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  animation-duration: 1s;
+}
+
+.rainbow-btn-lg::before,
+.rainbow-btn-sm::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.6), transparent);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* ============ RAINBOW BORDER (final CTA) ============ */
+.rainbow-border {
+  background: linear-gradient(135deg, rgba(255, 20, 147, 0.3), rgba(0, 255, 255, 0.3), rgba(157, 0, 255, 0.3));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: relative;
+}
+
+.rainbow-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 4px;
+  background: conic-gradient(
+    from 0deg,
+    #ff1493,
+    #ff00ff,
+    #9d00ff,
+    #00ffff,
+    #00ff88,
+    #ffff00,
+    #ff8800,
+    #ff1493
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: rotate-border 6s linear infinite;
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes rotate-border {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ============ TILT CARDS ============ */
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ============ GLASS BUTTON ============ */
+.glass-btn {
+  box-shadow: 0 8px 32px rgba(255, 0, 255, 0.2);
+}
+
+/* ============ REDUCED MOTION ============ */
+@media (prefers-reduced-motion: reduce) {
+  .rainbow-text-animated,
+  .rainbow-btn-lg,
+  .rainbow-btn-sm,
+  .animate-blob-1,
+  .animate-blob-2,
+  .animate-blob-3,
+  .animate-blob-4,
+  .animate-blob-5,
+  .rainbow-border::before {
+    animation: none;
+  }
+}

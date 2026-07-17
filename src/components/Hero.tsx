@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import DigitalWaveCanvas from "./DigitalWaveCanvas";
 
 function CharReveal({
   text,
@@ -133,22 +134,18 @@ export default function Hero() {
       ref={containerRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Animated gradient blobs */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-[15%] left-[20%] w-[500px] h-[500px] rounded-full bg-gold/[0.07] blur-[120px] animate-blob" />
-        <div className="absolute top-[30%] right-[15%] w-[400px] h-[400px] rounded-full bg-purple-500/[0.04] blur-[100px] animate-blob-reverse animation-delay-2" />
-        <div className="absolute bottom-[10%] left-[35%] w-[600px] h-[600px] rounded-full bg-gold/[0.04] blur-[150px] animate-blob animation-delay-4" />
-        <div className="absolute top-[60%] right-[30%] w-[350px] h-[350px] rounded-full bg-blue-500/[0.03] blur-[100px] animate-blob-reverse animation-delay-6" />
-      </div>
+      {/* Interactive digital wave field */}
+      <DigitalWaveCanvas />
 
-      {/* Radial gradient overlays */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(212,168,67,0.06),transparent)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_60%_at_50%_120%,rgba(212,168,67,0.03),transparent)]" />
+      {/* Radial gradient overlays for depth */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(212,168,67,0.04),transparent)] z-[1]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_50%,rgba(2,2,3,0.4),transparent)] z-[1]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_60%_at_50%_120%,rgba(212,168,67,0.03),transparent)] z-[1]" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
         {/* Eyebrow label */}
         <p className="hero-eyebrow mb-6 font-mono text-[11px] font-medium tracking-[0.3em] uppercase text-gold/70">
-          April 11, 2026 — Live Intensive
+          April 11, 2026: Live Intensive
         </p>
 
         {/* Gold divider */}
@@ -167,7 +164,7 @@ export default function Hero() {
         {/* Subheading */}
         <p className="hero-sub mx-auto mt-10 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
           A 4-hour workshop where you&apos;ll build a real AI system that runs
-          your business — not just answers your questions.
+          your business, not just answers your questions.
         </p>
 
         {/* CTA */}

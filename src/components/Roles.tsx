@@ -20,7 +20,7 @@ const roles = [
     title: "The Manager",
     question: "Did AI do X correctly?",
     description:
-      "Delegates tasks one at a time. Checks output. Edits it. Sends another. They've replaced one form of manual labor with another — babysitting, not leveraging.",
+      "Delegates tasks one at a time. Checks output. Edits it. Sends another. They've replaced one form of manual labor with another: babysitting, not leveraging.",
     verdict: "Marginal improvement",
     highlighted: false,
   },
@@ -28,7 +28,7 @@ const roles = [
     title: "The Director",
     question: "What should be happening in my business right now that isn't?",
     description:
-      "Designs systems. Defines outcomes. Sets up workflows that run without them. They don't ask AI to write an email — they build a system where the right email gets written, reviewed, and sent on triggers they defined once.",
+      "Designs systems. Defines outcomes. Sets up workflows that run without them. They don't ask AI to write an email. They build a system where the right email gets written, reviewed, and sent on triggers they defined once.",
     verdict: "Compounds forever",
     highlighted: true,
   },
@@ -112,7 +112,7 @@ export default function Roles() {
               key={role.title}
               className={`role-card group relative rounded-2xl p-8 lg:p-10 transition-all duration-500 cursor-default ${
                 role.highlighted
-                  ? "glass-gold gold-glow"
+                  ? "glass-gold gold-glow glow-border glow-border-intense"
                   : "glass hover:bg-white/[0.04]"
               }`}
             >

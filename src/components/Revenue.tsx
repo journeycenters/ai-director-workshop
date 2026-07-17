@@ -189,8 +189,8 @@ export default function Revenue() {
           <div className="mt-8 pt-6 border-t border-gold/10">
             <p className="text-base text-muted leading-relaxed">
               <strong className="text-fg">For revenue seekers:</strong> Skills
-              that used to require hiring — copywriting, social media, client
-              onboarding — can now be directed by one person. The pitch
+              that used to require hiring (copywriting, social media, client
+              onboarding) can now be directed by one person. The pitch
               isn&apos;t &ldquo;I know AI.&rdquo; The pitch is{" "}
               <span className="text-gold font-semibold">
                 &ldquo;I can make your business run smarter by next

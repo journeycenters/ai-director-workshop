@@ -1,6 +1,8 @@
 import SmoothScroll from "@/components/SmoothScroll";
 import Preloader from "@/components/Preloader";
 import ScrollProgress from "@/components/ScrollProgress";
+import CursorGlow from "@/components/CursorGlow";
+import FloatingParticles from "@/components/FloatingParticles";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Roles from "@/components/Roles";
@@ -17,6 +19,8 @@ export default function Home() {
       <SmoothScroll />
       <Preloader />
       <ScrollProgress />
+      <CursorGlow />
+      <FloatingParticles count={50} />
       <Navbar />
       <main>
         <Hero />

@@ -14,9 +14,9 @@ const parts = [
     duration: "60–75 min",
     subtitle: "You're Not Learning a Tool. You're Learning to Direct.",
     points: [
-      "The three roles people play with AI — and why only one compounds",
+      "The three roles people play with AI, and why only one compounds",
       "The Briefing Test: discover why your AI results suck (it's not the AI)",
-      "Real economics of directing vs. doing — the math, not the hype",
+      "Real economics of directing vs. doing: the math, not the hype",
     ],
   },
   {
@@ -25,7 +25,7 @@ const parts = [
     duration: "30–40 min",
     subtitle: "Seeing Your Business Through a Director's Eyes",
     points: [
-      "Audit your week — find the 40–60% that AI could handle today",
+      "Audit your week: find the 40–60% that AI could handle today",
       "Think in systems, not tasks: the difference between a moment and a rhythm",
       "Choose your first system to build in Part 3",
     ],
@@ -36,7 +36,7 @@ const parts = [
     duration: "75–90 min",
     subtitle: "You're Leaving With Something That Works",
     points: [
-      "Build your Soul Document — the briefing your AI Chief of Staff reads on day one",
+      "Build your Soul Document: the briefing your AI Chief of Staff reads on day one",
       "Construct a real, scheduled workflow from scratch",
       "Test it, refine it, walk out with something functional",
     ],
@@ -49,7 +49,7 @@ const parts = [
     subtitle: "What Happens After Today",
     points: [
       "30-day refinement path: from one system to an interconnected network",
-      "The revenue conversation — turn this skill into income",
+      "The revenue conversation: turn this skill into income",
       "Community access and ongoing support",
     ],
   },
@@ -122,7 +122,7 @@ export default function Program() {
             </h2>
           </div>
           <p className="prog-sub mt-6 text-lg text-muted leading-relaxed">
-            You&apos;re not watching a presentation — you&apos;re building.
+            You&apos;re not watching a presentation. You&apos;re building.
             Come ready to roll up your sleeves.
           </p>
         </div>

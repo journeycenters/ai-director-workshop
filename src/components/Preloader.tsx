@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import Image from "next/image";
+import DNAHelix from "./DNAHelix";
 
 export default function Preloader() {
   const ref = useRef<HTMLDivElement>(null);
@@ -51,13 +51,9 @@ export default function Preloader() {
       className="fixed inset-0 z-[100] bg-deep flex items-center justify-center"
     >
       <div className="flex flex-col items-center gap-5">
-        <Image
-          src="/logo.png"
-          alt=""
-          width={48}
-          height={48}
-          className="pl-logo opacity-80"
-        />
+        <div className="pl-logo">
+          <DNAHelix size={56} />
+        </div>
         <div className="pl-line h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent origin-center" />
         <p className="pl-text font-mono text-[11px] tracking-[0.3em] uppercase text-gold/50">
           AI Director Workshop
